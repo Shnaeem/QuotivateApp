@@ -20,7 +20,7 @@ html, body{
 	/* height: 10%; */
 	padding: 1% 0;
 	font-size: 1.2em;
-	opacity: 80%;
+	/*opacity: 80%;*/
 	/* justify-content: space-between; */
 }
 
@@ -111,7 +111,7 @@ vertical-align: middle;
 	padding: 0;
 	margin-left: 15%;
 	margin-right: 15%;
-	opacity: 85%;
+	/*opacity: 85%;*/
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
 	
