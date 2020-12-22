@@ -4550,25 +4550,19 @@ var _q = require("q");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_dotenv.default.config(); //const getDataButton = document.getElementById('searchbyAllQuotes')
-//const getDataButton = document.querySelector('.container')
-// getDataButton.addEventListener("click",(e)=>{
-//Event will start as soon as the page is loaded
+_dotenv.default.config(); //Event will start as soon as the page is loaded
 
 
 window.addEventListener('load', e => {
   e.preventDefault();
-  let url = `https://quote-garden.herokuapp.com/api/v3/genres`; //`https://quote-garden.herokuapp.com/api/v2/quotes?page=1&limit=21`
-  //   div.innerHTML ="";
+  let url = `https://quote-garden.herokuapp.com/api/v3/genres`;
 
   _axios.default.get(url).then(response => {
-    console.log(response); // // // Variable for Quote Data
-    // let allQuote = response.data.quotes    
-
+    console.log(response);
     let allQuote = response.data.data; //Defining a variable that will contain all the new divs i.e cards
 
-    let div = document.querySelector('.container');
-    var colors = ['#264653', '#2a9d8f', '#e9c46a', '#f4a261', '#e76f51', '#252d41', '#0f182e', '#262322', '#002A32', '#791E94', '#171123']; //Create For loop to create multiple cards
+    let div = document.querySelector('.container-card-holder');
+    let colors = ['#264653', '#2a9d8f', '#e9c46a', '#f4a261', '#e76f51', '#252d41', '#0f182e', '#262322', '#002A32', '#791E94', '#171123']; //Create For loop to create multiple cards
 
     for (let i = 0; i < allQuote.length; i++) {
       //Below variables will hold the data each time the loop will run
@@ -4584,7 +4578,7 @@ window.addEventListener('load', e => {
 
       AuthorName.innerHTML = `<a>${Topics}</a>`; //variable for random colors
 
-      var random_color = colors[Math.floor(Math.random() * colors.length)];
+      let random_color = colors[Math.floor(Math.random() * colors.length)];
       AuthorName.style.backgroundColor = random_color;
       div.appendChild(card);
       card.appendChild(AuthorName); //card.appendChild(QuotePara);
@@ -4608,7 +4602,7 @@ window.addEventListener('load', e => {
     }
   }).catch(error => {
     // handle error
-    let tem = document.querySelector('.container');
+    let tem = document.querySelector('.container-card-holder');
     tem.innerHTML = `Please enter the keyword again`;
     console.log(error);
   });
@@ -4623,7 +4617,7 @@ let clickedVal = function (r) {
   _axios.default.get(secondurl).then(response => {
     console.log(response); //Clear the div results from previous function
 
-    let div = document.querySelector('.container');
+    let div = document.querySelector('.container-card-holder');
     div.innerHTML = "";
     let newDatafromSecondUrl = response.data.data; //Below is where we will input all the data for the new requests copy the code from search by keyword here and modify it according to the results
     //Create For loop to create multiple cards
@@ -4651,7 +4645,7 @@ let clickedVal = function (r) {
     }
   }).catch(error => {
     // handle error
-    let tem = document.querySelector('.container');
+    let tem = document.querySelector('.container-card-holder');
     tem.innerHTML = `Please enter the keyword again`;
     console.log(error);
   });
@@ -4684,7 +4678,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52709" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56767" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

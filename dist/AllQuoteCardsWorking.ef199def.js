@@ -4560,7 +4560,7 @@ window.addEventListener('load', e => {
   e.preventDefault();
   let url = `https://quote-garden.herokuapp.com/api/v3/quotes?page=1&limit=400`; //`https://quote-garden.herokuapp.com/api/v2/quotes?page=1&limit=21`
 
-  let div = document.querySelector('.container'); // div.innerHTML ="";
+  let div = document.querySelector('.container-card-holder'); // div.innerHTML ="";
 
   _axios.default.get(url).then(response => {
     console.log(response); // // // Variable for Quote Data
@@ -4594,7 +4594,7 @@ window.addEventListener('load', e => {
     }
   }).catch(error => {
     // handle error
-    let tem = document.querySelector('.container');
+    let tem = document.querySelector('.container-card-holder');
     tem.innerHTML = `Please enter the keyword again`;
     console.log(error);
   });
@@ -4627,7 +4627,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52709" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56767" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -4550,13 +4550,12 @@ var _q = require("q");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_dotenv.default.config(); // const BASE_URL = process.env.BASE_URL;
-
+_dotenv.default.config();
 
 const getDataButton = document.getElementById('randomquotebtn');
 getDataButton.addEventListener("click", e => {
   e.preventDefault();
-  let url = `https://quote-garden.herokuapp.com/api/v3/quotes/random`; //https://quote-garden.herokuapp.com/api/v2/quotes/random
+  let url = `https://quote-garden.herokuapp.com/api/v3/quotes/random`;
 
   _axios.default.get(url).then(response => {
     console.log(response);
@@ -4599,7 +4598,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52709" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56767" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

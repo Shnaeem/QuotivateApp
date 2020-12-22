@@ -4550,19 +4550,16 @@ var _q = require("q");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_dotenv.default.config(); //const BASE_URL = process.env.BASE_URL;
-
+_dotenv.default.config();
 
 const SearchbyKeyword = document.getElementById('SearchbyKw');
 const getDataButton = document.getElementById('SearchbyKwBtn');
 getDataButton.addEventListener("click", e => {
-  // reload();
   e.preventDefault();
-  let div = document.querySelector('.container');
+  let div = document.querySelector('.container-card-holder');
   div.innerHTML = "";
-  let SearchbyKeywordS = SearchbyKeyword.value.toLowerCase(); //https://quote-garden.herokuapp.com/api/v3/quotes?query=${SearchbyKeywordS}
-
-  let url = `https://quote-garden.herokuapp.com/api/v3/quotes?query=${SearchbyKeywordS}&limit=99`; //https://quote-garden.herokuapp.com/api/v2/quotes/${SearchbyKeywordS}?page=1
+  let SearchbyKeywordS = SearchbyKeyword.value.toLowerCase();
+  let url = `https://quote-garden.herokuapp.com/api/v3/quotes?query=${SearchbyKeywordS}&limit=99`;
 
   _axios.default.get(url).then(response => {
     console.log(response); // // // Variable for Quote Data
@@ -4591,7 +4588,7 @@ getDataButton.addEventListener("click", e => {
     }
   }).catch(error => {
     // handle error
-    let tem = document.querySelector('.container');
+    let tem = document.querySelector('.container-card-holder');
     tem.innerHTML = `Please enter the keyword again`;
     console.log(error);
   });
@@ -4624,7 +4621,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52709" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56767" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
